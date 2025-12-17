@@ -1,0 +1,25 @@
+{
+  "name": "signavio-mcp",
+  "version": "1.0.0",
+  "description": "Signavio MCP Server",
+  "main": "mcp-server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node mcp-server.js",
+    "test": "node test-mcp-server.js"
+  },
+  "keywords": [
+    "signavio",
+    "api",
+    "test"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "qs": "^6.11.2"
+  }
+}
+
