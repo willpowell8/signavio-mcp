@@ -1,6 +1,6 @@
-# Signavio API Test Script
+# Signavio MCP Server
 
-A Node.js script to test the Signavio API using username and password authentication.
+An MCP (Model Context Protocol) server that exposes all Signavio API operations as tools for AI assistants.
 
 ## Prerequisites
 
@@ -17,11 +17,8 @@ A Node.js script to test the Signavio API using username and password authentica
    ```
 
 2. **Configure environment variables:**
-   ```bash
-   cp .env.example .env
-   ```
-
-3. **Edit `.env` file with your credentials:**
+   
+   Create a `.env` file in the project root with your credentials:
    ```env
    SIGNAVIO_BASE_URL=https://api.eu.signavio.cloud.sap
    SIGNAVIO_EMAIL=your-email@example.com
@@ -46,64 +43,22 @@ To find your tenant ID (Workspace ID):
 3. Select **Workspace information**
 4. Copy the **Workspace ID** - this is your tenant ID
 
-## Usage
-
-Run the test script:
-```bash
-npm start
-```
-
-Or directly:
-```bash
-node test-signavio-api.js
-```
-
-## What It Does
-
-The script will:
-1. Authenticate with the Signavio API using your credentials
-2. Obtain a JWT token and session cookie (JSESSIONID)
-3. Test several API endpoints from the official SAP Signavio Process Manager API:
-   - Get Root Folders (`/spm/v1/directory`)
-   - Search (`/spm/v1/search`)
-   - Get Dictionary Categories (`/spm/v1/glossarycategory`)
-   - Get Dictionary Entries (`/spm/v1/glossary`)
-4. Display results and a summary
-
-All endpoints follow the official API structure: `https://{baseUrl}/spm/v1/{resource}`
-
-## Customization
-
-You can modify the `runTests()` function in `test-signavio-api.js` to test different endpoints or add your own tests.
-
 ## Security Notes
 
 - Never commit your `.env` file to version control
-- The `.env` file is already included in `.gitignore`
+- The `.env` file should be included in `.gitignore`
 - Consider using environment variables or a secrets manager for production use
 
-## MCP Server
+## MCP Server Configuration
 
-This project includes an MCP (Model Context Protocol) server that exposes all Signavio API operations as tools for AI assistants.
+The MCP server uses environment variables from your `.env` file. You can also:
 
-### Setup MCP Server
+- Set environment variables in your system
+- Pass environment variables when starting the server
 
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+### MCP Client Configuration
 
-2. **Configure MCP server:**
-   
-   The MCP server uses environment variables. You can either:
-   
-   - Set environment variables in your system
-   - Use the `mcp-config.json` file (update with your credentials)
-   - Pass environment variables when starting the server
-
-3. **Add to your MCP client configuration:**
-   
-   For Cursor or other MCP-compatible clients, add this to your MCP configuration:
+For Cursor or other MCP-compatible clients, add this to your MCP configuration:
    
    ```json
    {
@@ -161,12 +116,12 @@ The MCP server provides the following tools:
 
 ### Running the MCP Server
 
-Test the MCP server directly:
+Start the MCP server:
 ```bash
-npm run mcp
+npm start
 ```
 
-Or:
+Or directly:
 ```bash
 node mcp-server.js
 ```
@@ -176,10 +131,10 @@ node mcp-server.js
 A comprehensive test script is available to verify all MCP server functionality:
 
 ```bash
-npm run test:mcp
+npm test
 ```
 
-Or:
+Or directly:
 ```bash
 node test-mcp-server.js
 ```
