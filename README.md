@@ -16,14 +16,14 @@ An MCP (Model Context Protocol) server that exposes all Signavio API operations 
 No installation required! You can run the MCP server directly using `npx`:
 
 ```bash
-npx @willpowell/signavio-mcp
+npx signavio-mcp
 ```
 
 ### Option 2: Local Installation
 
 1. **Install the package:**
    ```bash
-   npm install @willpowell/signavio-mcp
+   npm install signavio-mcp
    ```
 
 2. **Or clone the repository:**
@@ -85,7 +85,7 @@ For Cursor or other MCP-compatible clients, add this to your MCP configuration:
   "mcpServers": {
     "signavio-api": {
       "command": "npx",
-      "args": ["-y", "@willpowell/signavio-mcp"],
+      "args": ["-y", "signavio-mcp"],
       "env": {
         "SIGNAVIO_BASE_URL": "https://api.eu.signavio.cloud.sap",
         "SIGNAVIO_EMAIL": "your-email@example.com",
@@ -103,7 +103,7 @@ For Cursor or other MCP-compatible clients, add this to your MCP configuration:
   "mcpServers": {
     "signavio-api": {
       "command": "node",
-      "args": ["/path/to/node_modules/@willpowell/signavio-mcp/mcp-server.js"],
+      "args": ["/path/to/node_modules/signavio-mcp/mcp-server.js"],
       "env": {
         "SIGNAVIO_BASE_URL": "https://api.eu.signavio.cloud.sap",
         "SIGNAVIO_EMAIL": "your-email@example.com",
@@ -156,7 +156,7 @@ The MCP server provides the following tools:
 
 **Using npx (Recommended):**
 ```bash
-npx @willpowell/signavio-mcp
+npx signavio-mcp
 ```
 
 **Using locally installed package:**
