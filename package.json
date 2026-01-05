@@ -1,5 +1,5 @@
 {
-  "name": "@willpowell/signavio-mcp",
+  "name": "signavio-mcp",
   "version": "1.0.0",
   "description": "Signavio MCP Server",
   "main": "mcp-server.js",
