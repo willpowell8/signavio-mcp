@@ -1,6 +1,20 @@
 # Signavio MCP Server
 
-An MCP (Model Context Protocol) server that exposes all Signavio API operations as tools for AI assistants.
+A comprehensive Model Context Protocol (MCP) server that provides seamless integration between SAP Signavio Process Manager and AI-powered development tools. This server exposes the complete Signavio API as a set of tools, enabling AI assistants like Claude, Cursor, and other MCP-compatible clients to interact with your Signavio workspace programmatically.
+
+## Overview
+
+The Signavio MCP Server bridges the gap between business process management and AI-assisted development workflows. Whether you're automating process documentation, managing business process models, maintaining process dictionaries, or integrating Signavio data into your development pipeline, this server provides a unified interface for all Signavio API operations.
+
+### Key Features
+
+- **Complete API Coverage**: Full access to Signavio Process Manager API endpoints including models, folders, dictionary entries, and search functionality
+- **AI Assistant Integration**: Seamlessly works with Claude, Cursor, and other MCP-compatible AI development tools
+- **Business Process Automation**: Automate process model creation, updates, exports, and management tasks
+- **Dictionary Management**: Create, update, and search business process dictionaries and glossary entries
+- **Multi-format Export**: Export process models in JSON, BPMN 2.0 XML, PNG, and SVG formats
+- **Search Capabilities**: Full-text search across models, revisions, files, and dictionary entries
+- **Zero Configuration**: Run directly with npx or install locally for development
 
 ## Prerequisites
 

@@ -1,7 +1,7 @@
 {
   "name": "signavio-mcp",
   "version": "1.0.0",
-  "description": "Signavio MCP Server",
+  "description": "Model Context Protocol server for SAP Signavio Process Manager API integration with AI assistants",
   "main": "mcp-server.js",
   "bin": {
     "signavio-mcp": "./mcp-server.js"
@@ -13,8 +13,22 @@
   },
   "keywords": [
     "signavio",
+    "sap-signavio",
+    "process-manager",
+    "bpm",
+    "business-process-management",
+    "mcp",
+    "model-context-protocol",
     "api",
-    "test"
+    "integration",
+    "automation",
+    "claude",
+    "cursor",
+    "ai-assistant",
+    "bpmn",
+    "process-modeling",
+    "dictionary",
+    "glossary"
   ],
   "author": "Will Powell",
   "license": "ISC",
