@@ -9,14 +9,33 @@ An MCP (Model Context Protocol) server that exposes all Signavio API operations 
 - Signavio account with API access
 - Your Signavio tenant ID (Workspace ID)
 
-## Setup
+## Installation
 
-1. **Install dependencies:**
+### Option 1: Using npx (Recommended)
+
+No installation required! You can run the MCP server directly using `npx`:
+
+```bash
+npx @willpowell/signavio-mcp
+```
+
+### Option 2: Local Installation
+
+1. **Install the package:**
    ```bash
+   npm install @willpowell/signavio-mcp
+   ```
+
+2. **Or clone the repository:**
+   ```bash
+   git clone https://github.com/willpowell8/signavio-mcp.git
+   cd signavio-mcp
    npm install
    ```
 
-2. **Configure environment variables:**
+## Configuration
+
+**Configure environment variables:**
    
    Create a `.env` file in the project root with your credentials:
    ```env
@@ -59,23 +78,42 @@ The MCP server uses environment variables from your `.env` file. You can also:
 ### MCP Client Configuration
 
 For Cursor or other MCP-compatible clients, add this to your MCP configuration:
-   
-   ```json
-   {
-     "mcpServers": {
-       "signavio-api": {
-         "command": "node",
-         "args": ["/path/to/signavio/mcp-server.js"],
-         "env": {
-           "SIGNAVIO_BASE_URL": "https://api.eu.signavio.cloud.sap",
-           "SIGNAVIO_EMAIL": "your-email@example.com",
-           "SIGNAVIO_PASSWORD": "your-password",
-           "SIGNAVIO_TENANT": "your-tenant-id"
-         }
-       }
-     }
-   }
-   ```
+
+**Using npx (Recommended):**
+```json
+{
+  "mcpServers": {
+    "signavio-api": {
+      "command": "npx",
+      "args": ["-y", "@willpowell/signavio-mcp"],
+      "env": {
+        "SIGNAVIO_BASE_URL": "https://api.eu.signavio.cloud.sap",
+        "SIGNAVIO_EMAIL": "your-email@example.com",
+        "SIGNAVIO_PASSWORD": "your-password",
+        "SIGNAVIO_TENANT": "your-tenant-id"
+      }
+    }
+  }
+}
+```
+
+**Using locally installed package:**
+```json
+{
+  "mcpServers": {
+    "signavio-api": {
+      "command": "node",
+      "args": ["/path/to/node_modules/@willpowell/signavio-mcp/mcp-server.js"],
+      "env": {
+        "SIGNAVIO_BASE_URL": "https://api.eu.signavio.cloud.sap",
+        "SIGNAVIO_EMAIL": "your-email@example.com",
+        "SIGNAVIO_PASSWORD": "your-password",
+        "SIGNAVIO_TENANT": "your-tenant-id"
+      }
+    }
+  }
+}
+```
 
 ### Available MCP Tools
 
@@ -116,12 +154,17 @@ The MCP server provides the following tools:
 
 ### Running the MCP Server
 
-Start the MCP server:
+**Using npx (Recommended):**
+```bash
+npx @willpowell/signavio-mcp
+```
+
+**Using locally installed package:**
 ```bash
 npm start
 ```
 
-Or directly:
+**Or directly:**
 ```bash
 node mcp-server.js
 ```

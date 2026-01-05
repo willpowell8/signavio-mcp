@@ -1,8 +1,11 @@
 {
-  "name": "signavio-mcp",
+  "name": "@willpowell/signavio-mcp",
   "version": "1.0.0",
   "description": "Signavio MCP Server",
   "main": "mcp-server.js",
+  "bin": {
+    "signavio-mcp": "./mcp-server.js"
+  },
   "type": "module",
   "scripts": {
     "start": "node mcp-server.js",
@@ -13,13 +16,20 @@
     "api",
     "test"
   ],
-  "author": "",
+  "author": "Will Powell",
   "license": "ISC",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.4",
     "axios": "^1.6.0",
     "dotenv": "^16.3.1",
     "qs": "^6.11.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://willpowell8@github.com/willpowell8/signavio-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/willpowell8/signavio-mcp/issues"
+  },
+  "homepage": "https://github.com/willpowell8/signavio-mcp#readme"
 }
-
